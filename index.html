@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   <style>
+       /* default stylings */
+        
+        
+        
+        /* ----- container stylings: 
+        -> centers the whole content of the page
+        -> defines width and height for container ----- */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            
+            width: 100%;
+            height: 100%;
+        }
+        /* ----- end of container stylings ----- */
+        
+        .content {
+            position: relative;
+        }
+  
+        /* ----- carousel content stylings ----- */
+        /* places the carousel content on center of the carousel */
+       .content> .carousel-content {
+            position: absolute;
+            
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            text-align: center;
+            z-index: 50;
+            position: absolute;
+            bottom: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 70;
+        }
+        .carousel-heading {
+            font-size: 1rem;
+            color: black;
+            margin-bottom: 1rem;
+            position: sticky;
+            
+        }
+        /*----- end of carousel content stylings ----- */
+  
+        /* ----- slideshow stylings ----- */
+        .slideshow {
+            height: 100%;
+            overflow: hidden; /* to hide slides in x-direction */
+            position: relative;
+            width: 100%;
+        }
+        /* wrapper which wraps all the slideshow images stylings */
+        .slideshow-wrapper {
+            display: flex;
+            
+            width: 300%;
+            height: 100%;
+            position: relative;
+           
+            animation: slideshow 20s infinite;
+         }
+        
+        .slide {
+            width: 100%;
+            height: 100%;
+            
+        }
+        .slide-img {
+            width: 100%;
+            height: 100%;
+           
+        }
+        
+        @keyframes slideshow {
+            0%  { left: 0; }
+            10% { left: 0; }
+            15% { left: -100%; }
+            25% { left: -100%; }
+            30% { left: -200%; }
+            40% { left: -200%; }
+            45% { left: -300%; }
+            55% { left: -300%; }
+            60% { left: -200%; }
+            70% { left: -200%; }
+            75% { left: -100%; }
+            85% { left: -100%; }
+            90% { left: 0%; }
+        }
+        
+        .slide-btn {
+            background-color: #bbb;
+            border-radius: 50%;
+            border: .2rem solid;
+            width: 1.2rem;
+            height: 1.2rem;
+            outline: none;
+            cursor: pointer;
+            
+            position: absolute;
+            bottom: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 70;
+        }
+        
+        .slide-btn-1 {
+            left: 45%;
+        }
+        .slide-btn-2 {
+            left: 50%;
+        }
+        .slide-btn-3 {
+            left: 55%;
+        }
+        
+        
+        .slide-btn-1:focus~.slideshow-wrapper {
+            animation: none;
+            left: 0;
+        }
+        .slide-btn-2:focus~.slideshow-wrapper {
+            animation: none;
+            left: -100%;
+        }
+        .slide-btn-3:focus~.slideshow-wrapper {
+            animation: none;
+            left: -200%;
+        }
+   </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="images\Web capture_21-4-2022_154612_.jpeg" class="img-fluid" style="height: 8vh;"></a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" >Home</a>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Element</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Blog</a>
+              </li>
+               <li class="nav-item">
+                    <i class="bi bi-search nav-link "></i>
+                </li>
+               <li class="nav-item">
+                   <i class="bi bi-cart3 nav-link"></i>
+                </li>
+               <li class="nav-item">
+                    <i class="bi bi-person nav-link"></i>
+                </li>
+                </ul>
+             
+           
+           </div>
+        </div>
+      </nav>
+    
+       
+
+
+
+ 
+
+    <div class="container">
+       
+        <div class="content">
+            
+            <div class="carousel-content">
+                <h6 class="carousel-heading">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                </h6>
+                <button type="button" class="btn btn-success">View Bikes</button>
+                <button type="button" class="btn btn-outline-success">Shop Now</button>
+            </div>
+            <div class="slideshow">
+               
+                <button class="slide-btn slide-btn-1"></button>
+                <button class="slide-btn slide-btn-2"></button>
+                <button class="slide-btn slide-btn-3"></button>
+               
+                
+                <div class="slideshow-wrapper">
+                    <div class="slide">
+                        <img class="slide-img"
+                            src=
+"images\open.png">
+                    </div>
+                    <div class="slide">
+                    <img class="slide-img"
+                    src=
+"images\open.png">
+            </div>
+            <div class="slide">
+                <img class="slide-img"
+                    src=
+"images\open.png">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div class="secondSection">
+      <div class="text">
+       <h3 style="margin-bottom: 2vh;"> Why Jalidi EV ?  </h3>
+         
+       <h6 style="margin-bottom: 2vh;" > Accorian was founded so organizations can stop
+        
+        compromising between technology necessities and 
+        
+        technology budgets. Formed by technology and 
+        
+        cybersecurity leaders, Accorian strives to be your.
+        
+       </h6>
+        <h3>-Jaldi Test Drive </h3>
+        
+        <h3>-Jaldi Delivery </h3>
+        
+        <h3>-Jaldi Refund </h3>
+        
+        <h3>-Top Quality Bikes Only</h3>
+
+     </div>
+   <div class="photo container-sm ">
+     <img src="images\right.png" class="img-fluid container-sm" >
+    </div>
+     </div>
+ <div class="threebikes">
+     <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="images\p1_27.png" class="img-fluid container-sm" data-toggle="collapse">
+                <div class="card" style="margin-left: 5vw; margin-right: 5vw; margin-top: -5vh; border: 10em,solid,rgb(24, 20, 2);">
+                    <div class="card-body">
+                      <h5 class="card-title">E BIKE COLLECTION</h5>
+                      <p class="card-text">Daily Essentials</p>
+                      <a href="#" class="btn btn-success">View Bikes</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="images\p1_27.png" class="img-fluid container-sm" data-toggle="collapse">
+                <div class="card" style="margin-left: 5vw; margin-right: 5vw; margin-top: -5vh; border: 10em,solid,rgb(24, 20, 2);">
+                    <div class="card-body">
+                      <h5 class="card-title">E BIKE COLLECTION</h5>
+                      <p class="card-text">Daily Essentials</p>
+                      <a href="#" class="btn btn-success">View Bikes</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="images\p1_27.png" class="img-fluid container-sm" data-toggle="collapse">
+                <div class="card" style="margin-left: 5vw; margin-right: 5vw; margin-top: -5vh; border: 10em,solid,rgb(24, 20, 2);">
+                    <div class="card-body">
+                      <h5 class="card-title">E BIKE COLLECTION</h5>
+                      <p class="card-text">Daily Essentials</p>
+                      <a href="#" class="btn btn-success">View Bikes</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+      
+ </div>
+ <h1 style="margin-left: 15vw; margin-right: 15vw; text-align: center; margin-bottom: 10vh;"> Top Rated Electric Brands & Bikes</h1>
+ 
+ <div class="secondLastSection">
+
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <img src="images\onikara.png " class="rounded shadow p-3 mb-5 bg-body img-fluid container-sm" style="height:106.2vh;">
+    
+          </div>
+          <div class="col">
+            <div class="container">
+                <div class="row row-cols-2">
+                  <div class="col">
+                    <button type="button" class="btn btn-success">Top Rated</button>
+                    <button type="button" class="btn btn-outline-success">Popular</button>
+                    <div class="col">
+                        <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                          <img src="images\last.png" class="card-img-top container-sm img-fluid" alt="...">
+                          <div class="card-body">
+                              <p>
+                               <h5 class="card-title">Electric Folding Bike<br>Rs.40,000</h5>
+                              </p>
+                              <p>
+                              <button type="button" class="btn btn-success">Add to cart</button>
+                              </p>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                        <button type="button" class="btn btn-outline-dark"> <i class="bi bi-chevron-left"></i></button>
+                        <button type="button" class="btn btn-outline-dark"> <i class="bi bi-chevron-right"></i></button>
+                       
+                       
+                        <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                          <img src="images\last.png" class="card-img-top container-sm img-fluid" alt="...">
+                          <div class="card-body">
+                              <p>
+                               <h5 class="card-title">Electric Folding Bike<br>Rs.40,000</h5>
+                              </p>
+                              <p>
+                              <button type="button" class="btn btn-success">Add to cart</button>
+                              </p>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                        <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                          <img src="images\last.png" class="card-img-top container-sm img-fluid" alt="...">
+                          <div class="card-body">
+                              <p>
+                               <h5 class="card-title">Electric Folding Bike<br>Rs.40,000</h5>
+                              </p>
+                              <p>
+                              <button type="button" class="btn btn-success">Add to cart</button>
+                              </p>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col"> <div class="col">
+                    <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                      <img src="images\last.png" class="card-img-top container-sm img-fluid" alt="...">
+                      <div class="card-body">
+                          <p>
+                           <h5 class="card-title">Electric Folding Bike<br>Rs.40,000</h5>
+                          </p>
+                          <p>
+                          <button type="button" class="btn btn-success">Add to cart</button>
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+ </div>
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="images\onikara.png " class="rounded shadow p-3 mb-5 bg-body img-fluid container-sm" style="height:106.2vh;">
+
+      </div>
+      <div class="col">
+        <div class="container">
+            <div class="row row-cols-2">
+              <div class="col">
+                <button type="button" class="btn btn-success">Top Rated</button>
+                <button type="button" class="btn btn-outline-success">Popular</button>
+                <div class="col">
+                    <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                      <img src="images\last.png" class="card-img-top container-sm img-fluid" alt="...">
+                      <div class="card-body">
+                          <p>
+                           <h5 class="card-title">Electric Folding Bike<br>Rs.40,000</h5>
+                          </p>
+                          <p>
+                          <button type="button" class="btn btn-success">Add to cart</button>
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="col">
+                    <button type="button" class="btn btn-outline-dark"> <i class="bi bi-chevron-left"></i></button>
+                    <button type="button" class="btn btn-outline-dark"> <i class="bi bi-chevron-right"></i></button>
+                   
+                   
+                    <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                      <img src="images\last.png" class="card-img-top container-sm img-fluid" alt="...">
+                      <div class="card-body">
+                          <p>
+                           <h5 class="card-title">Electric Folding Bike<br>Rs.40,000</h5>
+                          </p>
+                          <p>
+                          <button type="button" class="btn btn-success">Add to cart</button>
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="col">
+                    <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                      <img src="images\last.png" class="card-img-top container-sm img-fluid" alt="...">
+                      <div class="card-body">
+                          <p>
+                           <h5 class="card-title">Electric Folding Bike<br>Rs.40,000</h5>
+                          </p>
+                          <p>
+                          <button type="button" class="btn btn-success">Add to cart</button>
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col"> <div class="col">
+                <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                  <img src="images\last.png" class="card-img-top container-sm img-fluid" alt="...">
+                  <div class="card-body">
+                      <p>
+                       <h5 class="card-title">Electric Folding Bike<br>Rs.40,000</h5>
+                      </p>
+                      <p>
+                      <button type="button" class="btn btn-success">Add to cart</button>
+                      </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+    
+ 
+ 
+ <footer>
+     <div class="light">
+         <div class="left">
+           <i class="bi bi-geo-alt-fill" style="margin-right:1vw;" ></i>
+          <p>Corporate Head Office:<br>
+           6 Alvin Ct, East Brunswick<br>
+          NJ 08816 USA<br>
+         </p>
+       </div>
+       <div class="middle">
+        <i class="bi bi-chat-left-text-fill" style="margin-right:1vw;"></i>
+        <p>
+            info@ebike.com<br>
+        
+        <i class="bi bi-telephone-fill" style="margin-right:1vw;"></i>
+          732-443-3468
+        </p>
+    </div>
+        <p>
+            <i class="bi bi-linkedin" style="margin-right: 2vw; "></i>
+            <i class="bi bi-youtube"style="margin-right: 2vw;" ></i>
+            <i class="bi bi-twitter" style="margin-right: 2vw;"></i>
+            <i class="bi bi-facebook" style="margin-right: 2vw;"></i>
+        </p>
+     </div>
+     <div class="dark">
+         <p>
+            Copyright © Accorian. All Rights Reserved | Terms of Service
+         </p>
+    </div>
+
+ </footer>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
